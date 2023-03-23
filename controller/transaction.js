@@ -14,7 +14,7 @@ exports.getListTransaction =  async function (req, res, next) {
 
         res.status(200).json({
             ResponseCode: '00',
-            message: "Aquired data success",
+            ResponseDesc: "Aquired data success",
             data: {
                 total: count,
                 page: page,
@@ -35,7 +35,7 @@ exports.createTransaction =  async function (req, res, next) {
         res.status(201).json({
             ResponseCode: '00',
             message: "Creating data success",
-            ResponseDesc: newTransaction.total_order,
+            ResponseDesc: `Total order Rp.${newTransaction.total_order}`,
             data: newTransaction
         });
     } catch (err) {
@@ -56,7 +56,7 @@ exports.updateTransaction =  async function (req, res, next) {
 
         res.status(201).json({
             ResponseCode: '00',
-            message: "Updating data success",
+            ResponseDesc: "Updating data success",
             data: trans
         });
     } catch (err) {
@@ -74,7 +74,7 @@ exports.deleteTransaction =  async function (req, res, next) {
       
         await trans.destroy()
 
-        res.status(200).json({ResponseCode: '00', message: "Deleting data success"});
+        res.status(200).json({ResponseCode: '00', ResponseDesc: "Deleting data success"});
     } catch (err) {
         next(err); 
     }

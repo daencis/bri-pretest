@@ -13,7 +13,7 @@ exports.getListUser =  async function (req, res, next) {
 
         res.status(200).json({
             ResponseCode: '00',
-            message: "Aquired data success",
+            ResponseDesc: "Aquired data success",
             data: {
                 total: count,
                 page: page,
@@ -33,7 +33,7 @@ exports.createUser =  async function (req, res, next) {
 
         res.status(201).json({
             ResponseCode: '00',
-            message: "Creating data success",
+            ResponseDesc: "Creating data success",
             data: newUser
         });
     } catch (err) {
@@ -54,7 +54,7 @@ exports.updateUser =  async function (req, res, next) {
 
         res.status(201).json({
             ResponseCode: '00',
-            message: "Updating data success",
+            ResponseDesc: "Updating data success",
             data: user
         });
     } catch (err) {
@@ -72,7 +72,7 @@ exports.deleteUser =  async function (req, res, next) {
       
         await user.destroy()
 
-        res.status(200).json({ResponseCode: '00', message: "Deleting data success"});
+        res.status(200).json({ResponseCode: '00', ResponseDesc: "Deleting data success"});
     } catch (err) {
         next(err); 
     }

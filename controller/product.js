@@ -13,7 +13,7 @@ exports.getListProduct =  async function (req, res, next) {
 
         res.status(200).json({
             ResponseCode: '00',
-            message: "Aquired data success",
+            ResponseDesc: "Aquired data success",
             data: {
                 total: count,
                 page: page,
@@ -32,7 +32,7 @@ exports.createProduct =  async function (req, res, next) {
 
         res.status(201).json({
             ResponseCode: '00',
-            message: "Creating data success",
+            ResponseDesc: "Creating data success",
             data: newProduct
         });
     } catch (err) {
@@ -53,7 +53,7 @@ exports.updateProduct =  async function (req, res, next) {
 
         res.status(201).json({
             ResponseCode: '00',
-            message: "Updating data success",
+            ResponseDesc: "Updating data success",
             data: product
         });
     } catch (err) {
@@ -71,7 +71,7 @@ exports.deleteProduct =  async function (req, res, next) {
       
         await product.destroy()
 
-        res.status(200).json({ResponseCode: '00', message: "Deleting data success"});
+        res.status(200).json({ResponseCode: '00', ResponseDesc: "Deleting data success"});
     } catch (err) {
         next(err); 
     }

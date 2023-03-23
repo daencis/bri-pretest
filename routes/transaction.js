@@ -1,4 +1,3 @@
-// const app = require('express').Router();
 const controller = require('../controller/transaction');
 module.exports = (app) => {
     app.get('/transaction/list', controller.getListTransaction)
@@ -6,5 +5,3 @@ module.exports = (app) => {
     app.patch('/transaction/update', controller.updateTransaction)
     app.delete('/transaction/delete', controller.deleteTransaction)
 }
-
-// module.exports = app
